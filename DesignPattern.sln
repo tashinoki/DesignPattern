@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern", "DesignPattern\DesignPattern.csproj", "{66B0137A-093D-409B-8294-B86922D480FF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "Observer\Observer.csproj", "{6AA8E811-7BB7-4D63-A018-B844FA8C05A7}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{66B0137A-093D-409B-8294-B86922D480FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66B0137A-093D-409B-8294-B86922D480FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66B0137A-093D-409B-8294-B86922D480FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66B0137A-093D-409B-8294-B86922D480FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6AA8E811-7BB7-4D63-A018-B844FA8C05A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6AA8E811-7BB7-4D63-A018-B844FA8C05A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AA8E811-7BB7-4D63-A018-B844FA8C05A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
