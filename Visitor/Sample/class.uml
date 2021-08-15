@@ -2,9 +2,9 @@
 
 class Main {}
 
-abstract class Visitor {
-	+ {abstract} void Visit(File)
-	+ {abstract} void Visit(Directory)
+interface Visitor {
+	void Visit(File)
+	void Visit(Directory)
 }
 
 class ListVisitor {
