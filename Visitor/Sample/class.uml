@@ -20,8 +20,8 @@ interface IElement {
 abstract class Entry {
   + {abstract} string GetName()
   + {abstract} int GetSize()
-  + Entry Add(Entry)
   + {abstract} void Accept(Visitor)
+  + Entry Add(Entry)
 }
 
 class Directory {
@@ -45,6 +45,7 @@ Visitor <|-- ListVisitor
 IElement <|-- Entry
 Entry <|-- Directory
 Entry <|-- File
+Entry --o Directory
 
 ListVisitor <-- Main
 Directory <-- Main
