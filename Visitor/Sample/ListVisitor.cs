@@ -9,12 +9,12 @@ namespace DesignPattern.Visitor.Sample
 
       public override void Visit(File file)
       {
-        Console.WriteLine(_currentdir + "/" + file);
+        Console.WriteLine(_currentdir + "/" + file.GetName());
       }
 
       public override void Visit (Directory directory)
       {
-        Console.WriteLine(_currentdir + "/" + directory);
+        Console.WriteLine(_currentdir + "/" + directory.GetName());
         string savedir = _currentdir;
         _currentdir = _currentdir + "/" + directory.GetName();
         IEnumerator it = directory.GetEnumerator();

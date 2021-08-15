@@ -1,0 +1,52 @@
+@startuml
+
+class Main {}
+
+abstract class Visitor {
+	+ {abstract} void Visit(File)
+	+ {abstract} void Visit(Directory)
+}
+
+class ListVisitor {
+  - string _currentdir
+  + void Visit(File)
+  + void Visit(Directory)
+}
+
+interface IElement {
+  + void Accept(Visitor)
+}
+
+abstract class Entry {
+  + {abstract} string GetName()
+  + {abstract} int GetSize()
+  + Entry Add(Entry)
+  + {abstract} void Accept(Visitor)
+}
+
+class Directory {
+  - string _name
+  - int _size
+  + string GetName()
+  + int GetSize()
+  + Entry Add(Entry)
+  + void Accept(Visitor)
+}
+
+class File {
+  - string _name
+  - int _size
+  + string GetName()
+  + int GetSize()
+  + void Accept(Visitor)
+}
+
+Visitor <|-- ListVisitor 
+IElement <|-- Entry
+Entry <|-- Directory
+Entry <|-- File
+
+ListVisitor <-- Main
+Directory <-- Main
+File <-- Main
+@enduml
