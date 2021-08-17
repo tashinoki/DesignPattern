@@ -1,6 +1,8 @@
-interface IProduct
-{
-    void Use(string s);
+using System;
 
-    IProduct CreateClone();
+public interface IProduct: ICloneable
+{
+    public void Use(string s);
+
+    public IProduct CreateClone();
 }
