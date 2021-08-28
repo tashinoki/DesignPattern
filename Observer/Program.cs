@@ -15,49 +15,49 @@ namespace Observer
         }
     }
 
-    class Employee
+class Employee
+{
+    static private List<INewEmployeeObserver> _observers = new List<INewEmployeeObserver>();
+    static public void Atach(INewEmployeeObserver observer)
+        => _observers.Add(observer);
+
+    static public void Detach(INewEmployeeObserver observer)
+        => _observers.Remove(observer);
+
+    private readonly string _name;
+    public string Name => _name;
+
+    private readonly string _address;
+
+    public string Address => _address;
+
+    public Employee(string name, string address)
     {
-        static private List<INewEmployeeObserver> _observers = new List<INewEmployeeObserver>();
-        static public void Atach(INewEmployeeObserver observer)
-            => _observers.Add(observer);
+        _name = name;
+        _address = address;
+    }
 
-        static public void Detach(INewEmployeeObserver observer)
-            => _observers.Remove(observer);
-
-        private readonly string _name;
-        public string Name => _name;
-
-        private readonly string _address;
-
-        public string Address => _address;
-
-        public Employee(string name, string address)
+    public void NotifyNewEmployee()
+    {
+        foreach(var observer in _observers)
         {
-            _name = name;
-            _address = address;
-        }
-
-        public void NotifyNewEmployee()
-        {
-            foreach(var observer in _observers)
-            {
-                observer.Update(this);
-            }
+            observer.Update(this);
         }
     }
+}
 
     interface INewEmployeeObserver
     {
         public void Update(Employee employee);
     }
 
-    class WelcomeLetter: INewEmployeeObserver
+class WelcomeLetter: INewEmployeeObserver
+{
+    public void Update(Employee employee)
     {
-        public void Update(Employee employee)
-        {
-            Console.WriteLine($"Welcome to our company {employee.Name}");
-        }
+        Console.WriteLine($"Welcome to our company {employee.Name}");
     }
+}
 
     class RentSubsidyValification: INewEmployeeObserver
     {
@@ -67,7 +67,6 @@ namespace Observer
 
             // some Logic
             //
-
             Console.WriteLine($"{employee.Name} rent will be subsidized by us.");
         }
     }
