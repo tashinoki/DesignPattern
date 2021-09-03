@@ -8,10 +8,8 @@ namespace Bridge.Sample
     {
         private IDisplayImp _displayImp;
 
-        public CountDisplay(IDisplayImp displayImp)
-        {
-            _displayImp = displayImp;
-        }
+        public CountDisplay(IDisplayImp displayImp) : base(displayImp)
+        { }
 
         public void MultiDisplay(int times)
         {
